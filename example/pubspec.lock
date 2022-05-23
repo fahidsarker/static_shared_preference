@@ -238,6 +238,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  solid_shared_pref:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.4"
   source_span:
     dependency: transitive
     description:
@@ -252,13 +259,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
-  static_shared_preference:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.4"
   stream_channel:
     dependency: transitive
     description:

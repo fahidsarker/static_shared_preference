@@ -1,5 +1,5 @@
-name: static_shared_preference
-description: A package to manage your shared_preference in a better way.
+name: solid_shared_pref
+description: A package to manage your shared_preference in a safer way.
 version: 0.0.4
 homepage: "https://github.com/MuhammadFahidSarker/static_shared_preference"
 

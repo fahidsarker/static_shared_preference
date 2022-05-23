@@ -1,11 +1,11 @@
 import 'package:example/preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:static_shared_preference/static_shared_preference.dart';
+import 'package:solid_shared_pref/solid_shared_pref.dart';
 
 void main() async{
   /// we initialize the static shared preference here
   WidgetsFlutterBinding.ensureInitialized();
-  await initStaticPreferences();
+  await initSolidSharedPreferences();
   runApp(const MyApp());
 }
 

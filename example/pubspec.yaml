@@ -27,7 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  static_shared_preference:
+  solid_shared_pref:
     path: ../
   flutter:
     sdk: flutter

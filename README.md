@@ -1,8 +1,8 @@
-# Static Shared Preference For Flutter (A static wrapper around the [shared_preference](http://https://pub.dev/packages/shared_preferences "shared_preference") package)
+# Solid Shared Preference For Flutter (A statically typed wrapper around the [shared_preference](http://https://pub.dev/packages/shared_preferences "shared_preference") package)
 
 ## Description
 
-With Static Shared Preference, you can declare your preference once in a top level file and forget about its key and type. It remembers its type and key. So, your change of making mistake is zero. It even understands the difference between nullable and non-nullable types. By default, the value of Preference is non-nullable.
+With Solid Shared Preference, you can declare your preference once in a top level file and forget about its key and type. It remembers its type and key. So, your change of making mistake is zero. It even understands the difference between nullable and non-nullable types. By default, the value of Preference is non-nullable.
 
 We recommand a single global constant for a single preference but it is also okay to create a local preference.
 
@@ -11,29 +11,29 @@ We recommand a single global constant for a single preference but it is also oka
 - Add the followinf line to your pubspec.yaml
 
 ```yaml
-static_shared_preference: ^0.0.4
+solid_shared_pref: ^0.0.4
 ```
 
 - import the package in your `main.dart` file
 
 ```dart
-import 'package:static_shared_preference/static_shared_preference.dart';
+import 'package:solid_shared_pref/solid_shared_pref.dart';
 ```
 
 - Make your main function async and call the followinf two functions before runApp:
 
 ```dart
   WidgetsFlutterBinding.ensureInitialized();
-  await initStaticPreferences();
+  await initSolidSharedPreferences();
 ```
 
 Full main function can be this:
 
 ```dart
 void main() async{
-  /// we initialize the static shared preference here
+  /// we initialize the solid shared preference here
   WidgetsFlutterBinding.ensureInitialized();
-  await initStaticPreferences();
+  await initSolidSharedPreferences();
   runApp(const MyApp());
 }
 ```

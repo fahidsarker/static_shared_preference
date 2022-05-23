@@ -1,4 +1,4 @@
-library static_shared_preference;
+library solid_shared_pref;
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';

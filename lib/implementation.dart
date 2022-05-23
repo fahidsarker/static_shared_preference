@@ -1,4 +1,4 @@
-part of static_shared_preference;
+part of solid_shared_pref;
 
 class IntPreference extends _IntegerPreference<int> {
   const IntPreference(String key, int defaultValue) : super(key, defaultValue);
@@ -66,7 +66,7 @@ class NullableStringListPreference
       : super(key, defaultValue);
 }
 
-class CustomPreference<T extends Object?> extends StaticPreference<T> {
+class CustomPreference<T extends Object?> extends SolidPreference<T> {
   final T? Function(Map<String, dynamic>) _fromJson;
   final Map<String, dynamic>? Function(T) _toJson;
 

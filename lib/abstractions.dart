@@ -1,10 +1,10 @@
-part of static_shared_preference;
+part of solid_shared_pref;
 
-abstract class StaticPreference<T extends Object?> {
+abstract class SolidPreference<T extends Object?> {
   final String key;
   final T defaultValue;
 
-  const StaticPreference._(this.key, this.defaultValue);
+  const SolidPreference._(this.key, this.defaultValue);
 
   Object? get _rawValue;
 
@@ -24,7 +24,7 @@ abstract class StaticPreference<T extends Object?> {
 
 }
 
-abstract class _IntegerPreference<T extends int?> extends StaticPreference<T> {
+abstract class _IntegerPreference<T extends int?> extends SolidPreference<T> {
   const _IntegerPreference(String key, T defaultValue)
       : super._(key, defaultValue);
 
@@ -35,7 +35,7 @@ abstract class _IntegerPreference<T extends int?> extends StaticPreference<T> {
   set value(T value) => _preferences.setInt(key, value!);
 }
 
-abstract class _BooleanPreference<T extends bool?> extends StaticPreference<T> {
+abstract class _BooleanPreference<T extends bool?> extends SolidPreference<T> {
   const _BooleanPreference(String key, T defaultValue)
       : super._(key, defaultValue);
 
@@ -47,7 +47,7 @@ abstract class _BooleanPreference<T extends bool?> extends StaticPreference<T> {
 }
 
 abstract class _DoublePreference<T extends double?>
-    extends StaticPreference<T> {
+    extends SolidPreference<T> {
   const _DoublePreference(String key, T defaultValue)
       : super._(key, defaultValue);
 
@@ -59,7 +59,7 @@ abstract class _DoublePreference<T extends double?>
 }
 
 abstract class _StringPreference<T extends String?>
-    extends StaticPreference<T> {
+    extends SolidPreference<T> {
   const _StringPreference(String key, T defaultValue)
       : super._(key, defaultValue);
 
@@ -71,7 +71,7 @@ abstract class _StringPreference<T extends String?>
 }
 
 abstract class _StringListPreferences<T extends List<String>?>
-    extends StaticPreference<T> {
+    extends SolidPreference<T> {
   const _StringListPreferences(String key, T defaultValue)
       : super._(key, defaultValue);
 
