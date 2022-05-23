@@ -8,7 +8,7 @@ abstract class StaticPreference<T extends Object?> {
 
   Object? get _rawValue;
 
-  set _updatedRawValue(T value);
+  set value(T value);
 
   T get value {
     final val = _rawValue;
@@ -18,13 +18,10 @@ abstract class StaticPreference<T extends Object?> {
     return val as T;
   }
 
-  set value(T? val) {
-    if (val == null) {
-      _preferences.remove(key);
-    } else {
-      _updatedRawValue = val;
-    }
+  void remove(){
+    _preferences.remove(key);
   }
+
 }
 
 abstract class _IntegerPreference<T extends int?> extends StaticPreference<T> {
@@ -35,7 +32,7 @@ abstract class _IntegerPreference<T extends int?> extends StaticPreference<T> {
   int? get _rawValue => _preferences.getInt(key);
 
   @override
-  set _updatedRawValue(T value) => _preferences.setInt(key, value!);
+  set value(T value) => _preferences.setInt(key, value!);
 }
 
 abstract class _BooleanPreference<T extends bool?> extends StaticPreference<T> {
@@ -46,7 +43,7 @@ abstract class _BooleanPreference<T extends bool?> extends StaticPreference<T> {
   bool? get _rawValue => _preferences.getBool(key);
 
   @override
-  set _updatedRawValue(T value) => _preferences.setBool(key, value!);
+  set value(T value) => _preferences.setBool(key, value!);
 }
 
 abstract class _DoublePreference<T extends double?>
@@ -58,7 +55,7 @@ abstract class _DoublePreference<T extends double?>
   double? get _rawValue => _preferences.getDouble(key);
 
   @override
-  set _updatedRawValue(T value) => _preferences.setDouble(key, value!);
+  set value(T value) => _preferences.setDouble(key, value!);
 }
 
 abstract class _StringPreference<T extends String?>
@@ -70,7 +67,7 @@ abstract class _StringPreference<T extends String?>
   String? get _rawValue => _preferences.getString(key);
 
   @override
-  set _updatedRawValue(T value) => _preferences.setString(key, value!);
+  set value(T value) => _preferences.setString(key, value!);
 }
 
 abstract class _StringListPreferences<T extends List<String>?>
@@ -82,5 +79,5 @@ abstract class _StringListPreferences<T extends List<String>?>
   List<String>? get _rawValue => _preferences.getStringList(key);
 
   @override
-  set _updatedRawValue(T value) => _preferences.setStringList(key, value!);
+  set value(T value) => _preferences.setStringList(key, value!);
 }

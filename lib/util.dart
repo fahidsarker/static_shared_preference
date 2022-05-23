@@ -3,7 +3,7 @@ part of static_shared_preference;
 
 SharedPreferences? __preferences;
 
-Future<void> initSharedPreferences() async {
+Future<void> initStaticPreferences() async {
   __preferences = await SharedPreferences.getInstance();
 }
 

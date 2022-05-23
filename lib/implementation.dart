@@ -87,5 +87,5 @@ class CustomPreference<T extends Object?> extends StaticPreference<T> {
   }
 
   @override
-  set _updatedRawValue(T value) => _preferences.setString(key, jsonEncode(_toJson(value)));
+  set value(T value) => _preferences.setString(key, jsonEncode(_toJson(value)));
 }
