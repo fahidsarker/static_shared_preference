@@ -11,7 +11,7 @@ We recommand a single global constant for a single preference but it is also oka
 - Add the followinf line to your pubspec.yaml
 
 ```yaml
-solid_shared_pref: ^0.0.4
+solid_shared_pref: ^0.0.5
 ```
 
 - import the package in your `main.dart` file
