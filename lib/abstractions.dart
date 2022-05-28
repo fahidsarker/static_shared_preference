@@ -22,6 +22,9 @@ abstract class SolidPreference<T extends Object?> {
     _preferences.remove(key);
   }
 
+  bool exists(){
+    return _preferences.containsKey(key);
+  }
 }
 
 abstract class _IntegerPreference<T extends int?> extends SolidPreference<T> {

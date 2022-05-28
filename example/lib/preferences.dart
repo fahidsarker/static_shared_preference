@@ -1,5 +1,7 @@
-
-
+import 'package:example/counter.dart';
 import 'package:solid_shared_pref/solid_shared_pref.dart';
 
-const counterPreference = IntPreference('my_counter', 0);
+final counterPreference = CustomPreference(
+    'my_counter', Counter('my counter', 0),
+    fromJson: (map) => Counter(map['type'], map['value']),
+    toJson: (counter) =>  {'type': counter.type, 'value': counter.value});

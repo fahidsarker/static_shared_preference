@@ -1,3 +1,4 @@
+import 'package:example/counter.dart';
 import 'package:example/preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:solid_shared_pref/solid_shared_pref.dart';
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
 
       /// instead of updating it locally, we update it in the preferences to make it persistent
-      counterPreference.value++;
+      counterPreference.value = Counter('NEw value', counterPreference.value.value + 1);
     });
   }
 
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               /// we read the value from the preference
-              '${counterPreference.value}',
+              '${counterPreference.value.value}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],

@@ -89,3 +89,23 @@ class CustomPreference<T extends Object?> extends SolidPreference<T> {
   @override
   set value(T value) => _preferences.setString(key, jsonEncode(_toJson(value)));
 }
+
+class DateTimePreference extends SolidPreference<DateTime>{
+  const DateTimePreference(String key, DateTime defaultValue) : super._(key, defaultValue);
+
+  @override
+  DateTime? get _rawValue {
+    final strVal = _preferences.getString(key);
+    if (strVal == null) {
+      return null;
+    }
+    return DateTime.parse(strVal);
+  }
+
+  @override
+  set value(DateTime value) {
+    _preferences.setString(key, value.toIso8601String());
+  }
+
+
+}
