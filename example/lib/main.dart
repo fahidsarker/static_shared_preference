@@ -3,7 +3,7 @@ import 'package:example/preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:solid_shared_pref/solid_shared_pref.dart';
 
-void main() async{
+void main() async {
   /// we initialize the static shared preference here
   WidgetsFlutterBinding.ensureInitialized();
   await initSolidSharedPreferences();
@@ -54,7 +54,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -64,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
 
       /// instead of updating it locally, we update it in the preferences to make it persistent
-      counterPreference.value = Counter('NEw value', counterPreference.value.value + 1);
+      counterPreference.value =
+          Counter('NEw value', counterPreference.value.value + 1);
     });
   }
 
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               /// we read the value from the preference
               '${counterPreference.value.value}',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
